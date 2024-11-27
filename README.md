@@ -1,1 +1,2 @@
 # Boukanye_restaurent
+"Boukanye_restaurent" is a project wich i make discover the gastronomy of my country(Ayiti) through a restaurent. That is why it is automatically in Creole but you have the possibility to change the language to English or French
