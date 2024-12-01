@@ -130,3 +130,6 @@ img {height: auto;}
  address{
     font-style: normal;
  }
+ .topbar{
+  display: none;
+ }
