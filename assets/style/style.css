@@ -64,6 +64,7 @@ img {height: auto;}
  section{
     height: 100vh;
     width: 100%;
+    position: relative;
  }
  /*PRELOADER*/
 .preloader{
@@ -75,8 +76,12 @@ img {height: auto;}
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 3s;
+    transition-delay: 5s;
+    opacity: 1;
  }
  .preloader.hidden{
+    transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
 }
@@ -339,7 +344,51 @@ section:nth-child(1) button:hover{
 section:nth-child(1) button:hover ion-icon{
     color: white;
 }
+/* section_2 */
 section:nth-child(2){
-    background-color: black;
+    overflow: hidden;
+    position: relative;
 }
+.background_filter{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    background-image: linear-gradient(to bottom,hsla(0, 0%, 0%, 0.839),hsla(0, 0%, 0%, 0.702),hsl(0, 0%, 0%));
+}
+.background_image{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
+.background_image img{
+    width: 100%;
+    height: 100%;
+}
+.container{
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    
+}
+.container_img{
+  width: 25%;
+  height: 70%;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+}
+/*Section 3*/
+section:nth-child(3){
+   background-color: hsl(51, 18%, 8%);
+} 
 
+.menu_img{
+    backdrop-filter: blur(10px);
+}

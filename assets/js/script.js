@@ -1,6 +1,15 @@
+//Preloader
+const preloader = document.querySelector(".preloader");
+window.addEventListener('load',loading);
+
+function loading(){
+   
+   preloader.classList.add("hidden");
+}
 
 
-//IMAGE SLIDER
+
+//IMAGE SLIDE
 const slides = document.querySelectorAll(".slide");
 let slideIndex = 0;
 let IntervalId = null;
