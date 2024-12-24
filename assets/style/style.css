@@ -35,7 +35,13 @@ body{
 li{
  list-style: none;
 }
-
+.font_1{
+    font-family: 'Playfair Display';
+    font-size: 3em ;
+}
+.font_2{
+    font-family: 'Nunito';
+}
 a,
 img,
 data,
@@ -52,7 +58,6 @@ a{
     text-decoration: none;
 }
 /* GENERAL */
-img {height: auto;}
  input,
  button,
  select,
@@ -370,25 +375,74 @@ section:nth-child(2){
     position: absolute;
     z-index: 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     height: 100%;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    
+}
+.title{
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+.img_container , .menu{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center; 
+    gap: 50px;
 }
 .container_img{
-  width: 25%;
-  height: 70%;
+  width: 20%;
+  height: 75%;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
 }
 /*Section 3*/
-section:nth-child(3){
-   background-color: hsl(51, 18%, 8%);
-} 
-
 .menu_img{
     backdrop-filter: blur(10px);
 }
+/*Section 4*/
+section:nth-child(4){
+    background-color: hsl(51, 18%, 8%);
+ } 
+ .menu_box{
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    gap: 25px;
+ }
+ .menu_container{
+    display: flex;
+    flex-direction: row;
+    align-items:start;
+    justify-content: space-between;
+    gap: 10px;
+ }
+ .description, .price{
+    font-size: 1.5em;
+ }
+ .plat_info{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+ }
+ .menu_box_img{
+    min-width: 80px;
+    height: 80px;
+    border-radius: 5px;
+ }
+ .vertical_line{
+    height: 80%;
+    width: 5px;
+    border-left: 1px solid white;
+ }
+ .description{
+   width:fit-content
+ }
