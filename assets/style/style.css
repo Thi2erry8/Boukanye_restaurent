@@ -446,3 +446,9 @@ section:nth-child(4){
  .description{
    width:fit-content
  }
+/*footer*/
+footer{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(52, 52, 52);
+}
