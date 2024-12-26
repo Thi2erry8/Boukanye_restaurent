@@ -37,7 +37,6 @@ li{
 }
 .font_1{
     font-family: 'Playfair Display';
-    font-size: 3em ;
 }
 .font_2{
     font-family: 'Nunito';
@@ -70,6 +69,7 @@ a{
     height: 100vh;
     width: 100%;
     position: relative;
+    overflow: hidden;
  }
  /*PRELOADER*/
 .preloader{
@@ -143,10 +143,9 @@ svg text{
 }
 /*  HEADER */
  header{
-     display: none;
-     position: fixed;
+     position: absolute;
      z-index: 10;
-     background-color: var(--black);
+     background-color: rgba(0, 0, 0, 0.371);
      width: 100%;
  }
  .header_container{
@@ -155,6 +154,8 @@ svg text{
     align-items: center;
     justify-content: space-between;
     padding: 10px 15px;
+    height: 80px;
+    overflow: hidden;
  }
 .header_container div ,.menu_list{
     display: flex; 
@@ -172,7 +173,8 @@ svg text{
     font-weight: bold;
 }
 .separator{
-    padding: 3px;
+    width: 15px;
+    height: 15px;
     border: 2px solid var(--gold-crayola);
     margin: 10px;
     animation: 50000s ease infinite  tour;
@@ -181,6 +183,11 @@ svg text{
     100%{
         transform: rotate(10000turn);
     }
+}
+nav{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
 }
 .menu_list{
     gap: 15px;
@@ -201,7 +208,7 @@ svg text{
     border-block: 1px solid var(--gold-crayola);
     transform: scaleX(0.2);
     opacity: 0;
-    transition: var(--transition-2); 
+    transition: 0.5s; 
 }
 .menu_list li:is(:hover)::after{
     transform: scaleX(1);
@@ -241,6 +248,10 @@ svg text{
 }
 .menu_list li:nth-last-child(1):hover .text_1{
     visibility: hidden;
+}
+.logo{
+    width: 200px;
+    height: 200px;
 }
 /* MAIN  */
 
@@ -320,7 +331,7 @@ section:nth-child(1){
     }
 }
 .slide_text p{
-    font-size: 4.5em;
+    font-size: 3.5em;
     width: 80%;
     text-align: center;
 }
@@ -386,8 +397,9 @@ section:nth-child(2){
     width: 100%;
     text-align: center;
     margin-top: 40px;
+    font-size: 3em ;
 }
-.img_container , .menu{
+.img_container , .menu {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -448,7 +460,46 @@ section:nth-child(4){
  }
 /*footer*/
 footer{
+    position: relative;
+    height: 60vh;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
     background-color: rgb(52, 52, 52);
+}
+.colunm img{
+    width: 150px;
+    height: 150px;
+}
+.colunm p{
+    text-align: center;
+}
+ .colunm{
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+.colunm:nth-child(1) , .colunm:nth-child(3)
+{
+  justify-content: center;
+  height: 80%;
+} 
+.separator_box{
+  display: flex;
+  flex-direction: row; 
+}
+.Footer_links{
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+}
+.Footer_links li{
+    transition: 0.5s;
+}
+.Footer_links li:hover{
+    letter-spacing: 5px;
 }
