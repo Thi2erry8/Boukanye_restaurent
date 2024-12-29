@@ -66,7 +66,7 @@ a{
      font: inherit;
  }
  section{
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     position: relative;
     overflow: hidden;
@@ -85,7 +85,7 @@ a{
     transition-delay: 5s;
     opacity: 1;
  }
- .preloader.hidden{
+ .preloader.masked{
     transform: translateY(100%);
     visibility: hidden;
     opacity: 0;
@@ -140,6 +140,27 @@ svg text{
       opacity: 1;
  }
  
+}
+/*Scroll Reveal*/
+.hidden{
+    transform: translateX(100%);
+    opacity: 0;
+    backdrop-filter: blur(5px);
+    transition: 1s ease-in-out;
+}
+.show{
+    transform: translateX(0%);
+    opacity: 1;
+    backdrop-filter: blur(0px);
+}
+.one{
+    transition-delay: 100ms;
+}
+.two{
+    transition-delay: 200ms;
+}
+.three{
+    transition-delay: 300ms;
 }
 /*  HEADER */
  header{
@@ -301,10 +322,15 @@ nav{
     background-color: hsla(0, 0%, 0%, 0.836);
     width: 100%;
     height: 100vh;
-    overflow: scroll;
+    transform: translateX(-100%); 
+    opacity: 0;
+    transition: 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+ }
+ header button:active , .side_menu button:active{
+    background-color: hsla(0, 0%, 29%, 0.788);
  }
  .side_menu_container{
-    background-color: hwb(0 12% 88% / 0.788);
+    background-color: hsla(0, 0%, 12%, 0.788);
     display: flex;
     width: 60%;
     align-items: center;
@@ -331,7 +357,7 @@ nav{
     width: 35px;
     height: 3px;
     background-color: white;
-    transform: translateY(-10px) rotate(-35deg);
+    transform: translateY(-11px) rotate(-35deg);
  }
  .side_menu_container:nth-child(2){
    flex-direction: column;
@@ -353,21 +379,19 @@ nav{
   /* MAIN  */
 
 /*  SLIDER */
-section:nth-child(1){
-    position: relative;
-}
+
 .overlay{
     position: absolute;
     z-index: 2;
     width: 100%;
     height: 100%;
-    background: hsla(0, 0%, 0%, 0.5);
+    background: hsla(0, 0%, 0%, 0.752);
 }
 .slider{
     overflow: hidden;
 }
 .slider,.slide{
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100%;
 }
@@ -384,14 +408,14 @@ section:nth-child(1){
     z-index: -1;
 }
 .slide.active img{
-    animation: zoom 6s;
+    animation: zoom 8s;
 }
 @keyframes zoom {
     0%{
         transform: scale(1);
     }
     100%{
-        transform: scale(1.20);
+        transform: scale(1.30);
     }
     
 }
@@ -458,10 +482,6 @@ section:nth-child(1) button:hover ion-icon{
     color: white;
 }
 /* section_2 */
-section:nth-child(2){
-    overflow: hidden;
-    position: relative;
-}
 .background_filter{
     width: 100%;
     height: 100%;
@@ -480,7 +500,7 @@ section:nth-child(2){
     height: 100%;
 }
 .container{
-    position: absolute;
+    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -564,6 +584,7 @@ footer{
     align-items: center;
     justify-content: space-around;
     background-color: rgb(52, 52, 52);
+    overflow: hidden;
 }
 .colunm img{
     width: 150px;
@@ -611,5 +632,79 @@ footer{
     .container_img{
         width: 25%;
         height: 60%;
+    }
+    /*Side_menu*/
+    .side_menu.active{
+        transform: translateX(0%); 
+        opacity: 1;
+        
+     } 
+}
+@media (max-width: 550px){
+    /*Header*/
+    .logo {
+        width: 150px;
+        height: 150px;
+    }
+    .menu_list li:nth-last-child(1) {
+        display: none;
+    }
+    .side_menu_container {
+        width: 100%;
+    }
+    /*Section_1*/
+    .prev, .next{
+        display: none;
+    }
+    .slide_text p {
+        font-size: 2em;
+        width: 85%;
+        text-align: center;
+    }
+    .container {
+        gap: 10px;
+        padding: 15px;
+    }
+    .background_filter {
+        background-image: linear-gradient(to bottom, hsla(0, 0%, 0%, 0.954), hsla(0, 0%, 0%, 0.9), hsl(0, 0%, 0%));
+    }
+    .img_container , .menu{
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        gap: 25px;
+    }
+    .container_img {
+        width: 55%;
+        height: 300px;
+    }
+    .menu_box {
+        width: 85%;
+        gap: 25px;
+    }
+/*     section:nth-child(3) ,section:nth-child(5){
+        height: 140vh;
+    } */
+    .title {
+        width: 100%;
+        text-align: center;
+        margin-top: 40px;
+        font-size: 2em;
+    }
+    .vertical_line{
+        display: none;
+    }
+    footer {
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgb(52, 52, 52);
+    }
+    .colunm:nth-last-child(1), .colunm:nth-child(3) {
+        height: 25%;
+    }
+    .description, .price {
+        font-size: 1.2em;
     }
 }
